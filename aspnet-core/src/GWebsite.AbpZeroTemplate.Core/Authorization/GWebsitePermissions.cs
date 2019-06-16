@@ -24,5 +24,10 @@
         public const string Pages_Administration_Customer_Edit = "Pages.Administration.Customer.Edit";
         public const string Pages_Administration_Customer_Delete = "Pages.Administration.Customer.Delete";
 
+        public const string Pages_Administration_Category = "Pages.Administration.Category";
+        public const string Pages_Administration_Category_Create = "Pages.Administration.Category.Create";
+        public const string Pages_Administration_Category_Edit = "Pages.Administration.Category.Edit";
+        public const string Pages_Administration_Category_Delete = "Pages.Administration.Category.Delete";
+
     }
 }
