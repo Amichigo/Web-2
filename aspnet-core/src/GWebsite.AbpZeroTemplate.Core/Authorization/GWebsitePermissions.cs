@@ -24,5 +24,14 @@
         public const string Pages_Administration_Customer_Edit = "Pages.Administration.Customer.Edit";
         public const string Pages_Administration_Customer_Delete = "Pages.Administration.Customer.Delete";
 
+        public const string Pages_Administration_Comment = "Pages.Administration.Comment";
+        public const string Pages_Administration_Comment_Create = "Pages.Administration.Comment.Create";
+        public const string Pages_Administration_Comment_Edit = "Pages.Administration.Commment.Edit";
+        public const string Pages_Administration_Comment_Delete = "Pages.Administration.Comment.Delete";
+
+        public const string Pages_Administration_Article = "Pages.Administration.Article";
+        public const string Pages_Administration_Article_Create = "Pages.Administration.Article.Create";
+        public const string Pages_Administration_Article_Edit = "Pages.Administration.Article.Edit";
+        public const string Pages_Administration_Article_Delete = "Pages.Administration.Article.Delete";
     }
 }
