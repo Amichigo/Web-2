@@ -29,5 +29,10 @@
         public const string Pages_Administration_Category_Edit = "Pages.Administration.Category.Edit";
         public const string Pages_Administration_Category_Delete = "Pages.Administration.Category.Delete";
 
+        public const string Pages_Administration_Lesson = "Pages.Administration.Lesson";
+        public const string Pages_Administration_Lesson_Create = "Pages.Administration.Lesson.Create";
+        public const string Pages_Administration_Lesson_Edit = "Pages.Administration.Lesson.Edit";
+        public const string Pages_Administration_Lesson_Delete = "Pages.Administration.Lesson.Delete";
+
     }
 }

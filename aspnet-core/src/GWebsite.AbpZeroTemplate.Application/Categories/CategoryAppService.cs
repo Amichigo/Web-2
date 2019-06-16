@@ -12,7 +12,7 @@ using System.Linq.Dynamic.Core;
 
 namespace GWebsite.AbpZeroTemplate.Web.Core.Categories
 {
-    [AbpAuthorize(GWebsitePermissions.Pages_Administration_MenuClient)]
+    [AbpAuthorize(GWebsitePermissions.Pages_Administration_Category)]
     public class CategoryAppService : GWebsiteAppServiceBase, ICategoryAppService
     {
         private readonly IRepository<Category> categoryRepository;
@@ -98,7 +98,7 @@ namespace GWebsite.AbpZeroTemplate.Web.Core.Categories
 
         #region Private Method
 
-        [AbpAuthorize(GWebsitePermissions.Pages_Administration_MenuClient_Create)]
+        [AbpAuthorize(GWebsitePermissions.Pages_Administration_Category_Create)]
         private void Create(CategoryInput categoryInput)
         {
             var categoryEntity = ObjectMapper.Map<Category>(categoryInput);
@@ -107,7 +107,7 @@ namespace GWebsite.AbpZeroTemplate.Web.Core.Categories
             CurrentUnitOfWork.SaveChanges();
         }
 
-        [AbpAuthorize(GWebsitePermissions.Pages_Administration_MenuClient_Edit)]
+        [AbpAuthorize(GWebsitePermissions.Pages_Administration_Category_Edit)]
         private void Update(CategoryInput categoryInput)
         {
             var categoryEntity = categoryRepository.GetAll().Where(x => !x.IsDelete).SingleOrDefault(x => x.Id == categoryInput.Id);

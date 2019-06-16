@@ -51,6 +51,10 @@ namespace GWebsite.AbpZeroTemplate.Core.Authorization
             category.CreateChildPermission(GWebsitePermissions.Pages_Administration_Category_Edit, L("EditingCategory"));
             category.CreateChildPermission(GWebsitePermissions.Pages_Administration_Category_Delete, L("DeletingCategory"));
 
+            var lesson = gwebsite.CreateChildPermission(GWebsitePermissions.Pages_Administration_Lesson, L("Lesson"));
+            lesson.CreateChildPermission(GWebsitePermissions.Pages_Administration_Lesson_Create, L("CreatingNewLesson"));
+            lesson.CreateChildPermission(GWebsitePermissions.Pages_Administration_Lesson_Edit, L("EditingLesson"));
+            lesson.CreateChildPermission(GWebsitePermissions.Pages_Administration_Lesson_Delete, L("DeletingLesson"));
         }
 
         private static ILocalizableString L(string name)

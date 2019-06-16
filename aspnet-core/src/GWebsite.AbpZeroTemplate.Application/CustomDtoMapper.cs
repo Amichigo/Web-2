@@ -1,5 +1,6 @@
 using AutoMapper;
 using GWebsite.AbpZeroTemplate.Application.Share.Customers.Dto;
+using GWebsite.AbpZeroTemplate.Application.Share.Lessons.Dto;
 using GWebsite.AbpZeroTemplate.Application.Share.DemoModels.Dto;
 using GWebsite.AbpZeroTemplate.Application.Share.MenuClients.Dto;
 using GWebsite.AbpZeroTemplate.Application.Share.Categories.Dto;
@@ -33,6 +34,12 @@ namespace GWebsite.AbpZeroTemplate.Applications
             configuration.CreateMap<CategoryInput, Category>();
             configuration.CreateMap<Category, CategoryInput>();
             configuration.CreateMap<Category, CategoryForViewDto>();
+
+            // Lesson
+            configuration.CreateMap<Lesson, LessonDto>();
+            configuration.CreateMap<LessonInput, Lesson>();
+            configuration.CreateMap<Lesson, LessonInput>();
+            configuration.CreateMap<Lesson, LessonForViewDto>();
         }
     }
 }

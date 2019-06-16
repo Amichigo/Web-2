@@ -1665,6 +1665,35 @@ namespace GSoft.AbpZeroTemplate.Migrations
                     b.ToTable("Functions");
                 });
 
+            modelBuilder.Entity("GWebsite.AbpZeroTemplate.Core.Models.Lesson", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("CatName");
+
+                    b.Property<string>("CreatedBy");
+
+                    b.Property<DateTime?>("CreatedDate");
+
+                    b.Property<string>("IntroImage");
+
+                    b.Property<bool>("IsDelete");
+
+                    b.Property<string>("LessonContent");
+
+                    b.Property<string>("Link");
+
+                    b.Property<string>("UpdatedBy");
+
+                    b.Property<DateTime?>("UpdatedDate");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Lessons");
+                });
+
             modelBuilder.Entity("GWebsite.AbpZeroTemplate.Core.Models.MenuClient", b =>
                 {
                     b.Property<int>("Id")
