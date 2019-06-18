@@ -1,14 +1,14 @@
-﻿using System;
+﻿using Abp.Domain.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GWebsite.AbpZeroTemplate.Core.Models
+namespace GWebsite.AbpZeroTemplate.Application.Share.Comments.Dto
 {
-    public class Article: FullAuditModel
+    public class CommentInput: Entity<int>
     {
-        public string Topic { get; set; }
         public string Content { get; set; }
         public int UserId { get; set; }
     }

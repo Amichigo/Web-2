@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GWebsite.AbpZeroTemplate.Core.Models
+namespace GWebsite.AbpZeroTemplate.Application.Share.Articles.Dto
 {
-    public class Article: FullAuditModel
+    public class ArticleForView
     {
         public string Topic { get; set; }
         public string Content { get; set; }

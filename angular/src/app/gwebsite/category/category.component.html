@@ -1,0 +1,41 @@
+<div>
+    <div class="container-fluid bgimage-color">
+        <img class="mx-auto d-block" src="assets/Banner/Eng_banner.jpg" class="img-fluid" alt="Responsive image">
+    </div>
+    <br>
+    <div class="container intro">
+        <h1>Home</h1>
+        <div style="word-wrap:break-word;">
+            LearnEnglish Kids is brought to you by the UIT student team, the world's Technology experts.
+            We have lots of free online games, songs, stories and activities for children.
+            For parents, we have articles on supporting children in learning English, videos on using English at home and information about face-to-face courses around the world.
+        </div>
+    </div>
+    <br>
+    <div class="container">
+        <div class="row row-eq-height">
+            <div class="col-3 border border-light rounded overflow-auto d-flex flex-column" *ngFor="let item of categories">
+                <img class="d-block mx-auto img-fluid rounded" src="{{item.catImage}}">
+                <h1>{{item.catName}}</h1>
+                <br>
+                <div style="word-wrap:break-word;">{{item.catContent}}</div>
+                <button class="mt-auto btn btn-info">
+                    <h3>
+                        <a href="#"> MORE --→ </a>
+                    </h3>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <div class="container-fluid" id="footer">
+        <div class="container">
+            <br>
+            <h2 class="text-light">Developer Team:</h2>
+            <h5 class="text-light"> Tran Hoang An</h5>
+            <h5 class="text-light"> Cao Minh huy</h5>
+            <h5 class="text-light"> Nguyen Le Hoai An</h5>
+        </div>
+    </div>
+</div>
