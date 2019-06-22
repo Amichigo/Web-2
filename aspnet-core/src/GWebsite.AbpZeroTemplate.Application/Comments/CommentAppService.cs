@@ -13,7 +13,7 @@ using System.Linq.Dynamic.Core;
 namespace GWebsite.AbpZeroTemplate.Web.Core.Comments
 {
     [AbpAuthorize(GWebsitePermissions.Pages_Administration_Comment)]
-    class CommentAppService : GWebsiteAppServiceBase, ICommentAppService
+    public class CommentAppService : GWebsiteAppServiceBase, ICommentAppService
     {
         private readonly IRepository<Comment> commentRepository;
 

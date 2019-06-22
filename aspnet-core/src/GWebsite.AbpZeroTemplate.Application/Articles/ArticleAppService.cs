@@ -13,7 +13,7 @@ using System.Linq;
 namespace GWebsite.AbpZeroTemplate.Web.Core.Articles
 {
     [AbpAuthorize(GWebsitePermissions.Pages_Administration_Article)]
-    class ArticleAppService: GWebsiteAppServiceBase, IArticleAppService
+    public class ArticleAppService: GWebsiteAppServiceBase, IArticleAppService
     {
         private readonly IRepository<Article> articleRepository;
 

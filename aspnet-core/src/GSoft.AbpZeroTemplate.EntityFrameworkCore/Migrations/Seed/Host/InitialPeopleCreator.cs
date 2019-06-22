@@ -29,7 +29,7 @@ namespace GSoft.AbpZeroTemplate.Migrations.Seed.Host
                     new Category
                     {
                         CatName = "listen & watch",
-                        CatImage = "Banner/watch_listen.jpg",
+                        CatImage = "assets/Banner/watch_listen.jpg",
                         CatContent = "Do you like listening to songs and watching stories and videos in English? In this section you can learn to sing songs in English and watch fun stories and videos."
                     });
             }
@@ -41,7 +41,7 @@ namespace GSoft.AbpZeroTemplate.Migrations.Seed.Host
                     new Category
                     {
                         CatName = "read & write",
-                        CatImage = "','Banner/read_write.png",
+                        CatImage = "assets/Banner/read_write.png",
                         CatContent = "Do you want to practise your reading and writing in English? In this section you can read and write about interesting topics."
                     });
             }
@@ -53,7 +53,7 @@ namespace GSoft.AbpZeroTemplate.Migrations.Seed.Host
                     new Category
                     {
                         CatName = "speak & spell",
-                        CatImage = "Banner/speak_spell.jpg",
+                        CatImage = "assets/Banner/speak_spell.jpg",
                         CatContent = "Do you want to improve your spelling and pronunciation in English? In this section you can learn how to say and spell English words, the super space spies. Play games and watch songs and stories."
                     });
             }
@@ -65,7 +65,7 @@ namespace GSoft.AbpZeroTemplate.Migrations.Seed.Host
                     new Category
                     {
                         CatName = "gramma & vocabulary",
-                        CatImage = "Banner/gramma_vocabulary.jpg",
+                        CatImage = "assets/Banner/gramma_vocabulary.jpg",
                         CatContent = "Do you want to practise your English grammar and learn new words? In this section you can learn about grammar rules, play word games and watch fun videos. Watch the grammar videos, play the grammar games and print the grammar worksheets."
                     });
             }

@@ -14,5 +14,6 @@ namespace GWebsite.AbpZeroTemplate.Application.Share.Articles
         ArticleInput GetArticleForEdit(int id);
         void DeleteArticle(int id);
         PagedResultDto<ArticleDto> GetArticles(ArticleFilter input);
+        ArticleForView GetArticleForView(int id);
     }
 }
