@@ -1557,6 +1557,8 @@ namespace GSoft.AbpZeroTemplate.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<string>("CatName");
+
                     b.Property<string>("Content");
 
                     b.Property<string>("CreatedBy");

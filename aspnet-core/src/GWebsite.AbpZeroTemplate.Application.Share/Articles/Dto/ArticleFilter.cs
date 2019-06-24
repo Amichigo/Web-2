@@ -10,5 +10,6 @@ namespace GWebsite.AbpZeroTemplate.Application.Share.Articles.Dto
     public class ArticleFilter:PagedAndSortedInputDto
     {
         public string Topic { get; set; }
+        public string CatName { get; set; }
     }
 }

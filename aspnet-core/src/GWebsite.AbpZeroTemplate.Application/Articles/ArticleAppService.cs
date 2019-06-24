@@ -77,6 +77,11 @@ namespace GWebsite.AbpZeroTemplate.Web.Core.Articles
                 query = query.Where(x => x.Topic.ToLower().Contains(input.Topic));
             }
 
+            if (input.CatName != null)
+            {
+                query = query.Where(x => x.CatName.ToLower().Contains(input.CatName));
+            }
+
             var totalCount = query.Count();
 
             // sorting

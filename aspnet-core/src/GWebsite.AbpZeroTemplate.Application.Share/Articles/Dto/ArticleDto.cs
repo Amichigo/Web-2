@@ -9,6 +9,7 @@ namespace GWebsite.AbpZeroTemplate.Application.Share.Articles.Dto
 {
     public class ArticleDto: Entity<int>
     {
+        public string CatName { get; set; }
         public string Topic { get; set; }
         public string Content { get; set; }
         public int UserId { get; set; }

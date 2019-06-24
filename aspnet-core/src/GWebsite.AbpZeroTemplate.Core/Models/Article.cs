@@ -8,6 +8,7 @@ namespace GWebsite.AbpZeroTemplate.Core.Models
 {
     public class Article: FullAuditModel
     {
+         public string CatName { get; set; }
         public string Topic { get; set; }
         public string Content { get; set; }
         public int UserId { get; set; }

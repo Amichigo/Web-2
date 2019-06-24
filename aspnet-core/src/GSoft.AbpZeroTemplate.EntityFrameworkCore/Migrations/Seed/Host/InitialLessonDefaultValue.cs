@@ -85,7 +85,7 @@ namespace GSoft.AbpZeroTemplate.Migrations.Seed.Host
                     {
                         IntroImage = "assets/Read/Read1.jpg",
                         LessonContent = "Helping others",
-                        Link = "Read/Reading1.png",
+                        Link = "assets/Read/Reading1.png",
                         CatName = "read & write"
                     });
             }
@@ -97,7 +97,7 @@ namespace GSoft.AbpZeroTemplate.Migrations.Seed.Host
                     {
                         IntroImage = "assets/Read/Read2.jpg",
                         LessonContent = "Say no to bullying",
-                        Link = "Read/Reading2.png",
+                        Link = "assets/Read/Reading2.png",
                         CatName = "read & write"
                     });
             }
@@ -109,7 +109,7 @@ namespace GSoft.AbpZeroTemplate.Migrations.Seed.Host
                     {
                         IntroImage = "assets/Read/Read3.jpg",
                         LessonContent = "Superheroes",
-                        Link = "Read/Reading3.png",
+                        Link = "assets/Read/Reading3.png",
                         CatName = "read & write"
                     });
             }
@@ -121,7 +121,7 @@ namespace GSoft.AbpZeroTemplate.Migrations.Seed.Host
                     {
                         IntroImage = "assets/Read/Read4.jpg",
                         LessonContent = "Seasons",
-                        Link = "Read/Reading4.png",
+                        Link = "assets/Read/Reading4.png",
                         CatName = "read & write"
                     });
             }
