@@ -31,9 +31,9 @@ namespace GSoft.AbpZeroTemplate.Migrations.Seed.Host
                 _context.Lessons.Add(
                     new Lesson
                     {
-                        IntroImage= "Listen/ListenIcon1.jpg",
+                        IntroImage = "assets/Listen/ListenIcon1.jpg",
                         LessonContent= "Animal House",
-                        Link= "Video/animal_house.mp4",
+                        Link= "assets/Video/animal_house.mp4",
                         CatName = "listen & watch"
                     });
             }
@@ -45,7 +45,7 @@ namespace GSoft.AbpZeroTemplate.Migrations.Seed.Host
                     {
                         IntroImage = "assets/Listen/ListenIcon2.jpg",
                         LessonContent = "Baby Shark",
-                        Link = "Video/Baby_Shark.mp4",
+                        Link = "assets/Video/Baby_Shark.mp4",
                         CatName = "listen & watch"
                     });
             }
@@ -57,7 +57,7 @@ namespace GSoft.AbpZeroTemplate.Migrations.Seed.Host
                     {
                         IntroImage = "assets/Listen/ListenIcon3.jpg",
                         LessonContent = "The alphabet song",
-                        Link = "Video/The_alphabet_song.mp4",
+                        Link = "assets/Video/The_alphabet_song.mp4",
                         CatName = "listen & watch"
                     });
             }
@@ -69,7 +69,7 @@ namespace GSoft.AbpZeroTemplate.Migrations.Seed.Host
                     {
                         IntroImage = "assets/Listen/ListenIcon4.jpg",
                         LessonContent = "Wheels on the bus",
-                        Link = "Video/Wheels_on_the_Bus .mp4",
+                        Link = "assets/Video/Wheels_on_the_Bus .mp4",
                         CatName = "listen & watch"
                     });
             }
@@ -133,7 +133,7 @@ namespace GSoft.AbpZeroTemplate.Migrations.Seed.Host
                     {
                         IntroImage = "assets/Write/Write1.jpg",
                         LessonContent = "Problem page",
-                        Link = "Write/Writing1.png",
+                        Link = "assets/Write/Writing1.png",
                         CatName = "read & write"
                     });
             }
@@ -145,7 +145,7 @@ namespace GSoft.AbpZeroTemplate.Migrations.Seed.Host
                     {
                         IntroImage = "assets/Write/Write2.jpg",
                         LessonContent = "Penpal letter",
-                        Link = "Write/Writing2.png",
+                        Link = "assets/Write/Writing2.png",
                         CatName = "read & write"
                     });
             }
@@ -157,7 +157,7 @@ namespace GSoft.AbpZeroTemplate.Migrations.Seed.Host
                     {
                         IntroImage = "assets/Write/Write3.jpg",
                         LessonContent = "Book review",
-                        Link = "Write/Writing3.png",
+                        Link = "assets/Write/Writing3.png",
                         CatName = "read & write"
                     });
             }
@@ -173,7 +173,7 @@ namespace GSoft.AbpZeroTemplate.Migrations.Seed.Host
                     {
                         IntroImage = "assets/Banner/speak_spell.jpg",
                         LessonContent = "The television",
-                        Link = "Video/SpeakVid1.mp4",
+                        Link = "assets/Video/SpeakVid1.mp4",
                         CatName = "speak & spell"
                     });
             }
@@ -185,7 +185,7 @@ namespace GSoft.AbpZeroTemplate.Migrations.Seed.Host
                     {
                         IntroImage = "assets/Banner/speak_spell.jpg",
                         LessonContent = "The camping adventure",
-                        Link = "Video/SpeakVid2.mp4",
+                        Link = "assets/Video/SpeakVid2.mp4",
                         CatName = "speak & spell"
                     });
             }
@@ -197,7 +197,7 @@ namespace GSoft.AbpZeroTemplate.Migrations.Seed.Host
                     {
                         IntroImage = "assets/Banner/speak_spell.jpg",
                         LessonContent = "The spelling sports day",
-                        Link = "Video/SpellVid1.mp4",
+                        Link = "assets/Video/SpellVid1.mp4",
                         CatName = "speak & spell"
                     });
             }
@@ -209,7 +209,7 @@ namespace GSoft.AbpZeroTemplate.Migrations.Seed.Host
                     {
                         IntroImage = "assets/Banner/speak_spell.jpg",
                         LessonContent = "The boat adventure",
-                        Link = "Video/SpellVid2.mp4",
+                        Link = "assets/Video/SpellVid2.mp4",
                         CatName = "speak & spell"
                     });
             }
@@ -225,7 +225,7 @@ namespace GSoft.AbpZeroTemplate.Migrations.Seed.Host
                     {
                         IntroImage = "assets/Gramma/Gramma1.jpg",
                         LessonContent = "Present Simple Tense",
-                        Link = "Video/GrammarVid1.mp4",
+                        Link = "assets/Video/GrammarVid1.mp4",
                         CatName = "gramma & vocabulary"
                     });
             }
@@ -237,7 +237,7 @@ namespace GSoft.AbpZeroTemplate.Migrations.Seed.Host
                     {
                         IntroImage = "assets/Gramma/Gramma2.jpg",
                         LessonContent = "Present Continuous Tense",
-                        Link = "Video/GrammarVid2.mp4",
+                        Link = "assets/Video/GrammarVid2.mp4",
                         CatName = "gramma & vocabulary"
                     });
             }
@@ -249,7 +249,7 @@ namespace GSoft.AbpZeroTemplate.Migrations.Seed.Host
                     {
                         IntroImage = "assets/Gramma/Gramma3.jpg",
                         LessonContent = "Nouns Countable And Uncountable",
-                        Link = "Video/GrammarVid3.mp4",
+                        Link = "assets/Video/GrammarVid3.mp4",
                         CatName = "gramma & vocabulary"
                     });
             }
@@ -261,7 +261,7 @@ namespace GSoft.AbpZeroTemplate.Migrations.Seed.Host
                     {
                         IntroImage = "assets/Vocabulary/Vocab1.jpg",
                         LessonContent = "Sea Animals",
-                        Link = "Video/VocabVid1.mp4",
+                        Link = "assets/Video/VocabVid1.mp4",
                         CatName = "gramma & vocabulary"
                     });
             }
@@ -273,7 +273,7 @@ namespace GSoft.AbpZeroTemplate.Migrations.Seed.Host
                     {
                         IntroImage = "assets/Vocabulary/Vocab2.jpg",
                         LessonContent = "Baby Animals",
-                        Link = "Video/VocabVid2.mp4",
+                        Link = "assets/Video/VocabVid2.mp4",
                         CatName = "gramma & vocabulary"
                     });
             }

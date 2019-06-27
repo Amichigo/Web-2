@@ -1,0 +1,44 @@
+<div class="container-fluid bgimage-color">
+    <img class="mx-auto d-block img-fluid" src="assets/Banner/Eng_banner.jpg" alt="Responsive image">
+</div>
+<br>
+<br>
+<div class="container">
+    <div>
+        <h1>{{lesson.lessonContent}}</h1>
+    </div>
+    <br>
+    <br>
+    <br>
+    <div class="border border-light rounded overflow-auto d-flex flex-column">
+        <img width="1200" src="{{lesson.link}}">
+        <br>
+        <br>
+    </div>
+    <form [class.disapear]="type == 'Write'" novalidate (ngSubmit)="save()">
+        <div class="form-group">
+            <label>{{lesson.lessonContent}}</label>
+            <textarea class="form-control rounded-0" #articleInput="ngModel" name="Topic"
+                      [(ngModel)]="article.topic" rows="10"></textarea>
+        </div>
+        <div class="modal-footer">
+            <button type="submit" class="btn btn-primary" [buttonBusy]="saving"
+                    [busyText]="l('SavingWithThreeDot')">
+                <i class="fa fa-save"></i>
+                <span>{{l("Save")}}</span>
+            </button>
+        </div>
+    </form>
+    <br>
+    <br>
+    <br>
+    <div class="container-fluid" id="footer">
+        <div class="container">
+            <br>
+            <h2 class="text-light">Developer Team:</h2>
+            <h5 class="text-light"> Tran Hoang An</h5>
+            <h5 class="text-light"> Cao Minh huy</h5>
+            <h5 class="text-light"> Nguyen Le Hoai An</h5>
+        </div>
+    </div>
+</div>

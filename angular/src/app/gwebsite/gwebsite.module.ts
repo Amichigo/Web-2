@@ -1,4 +1,4 @@
-import { CustomerServiceProxy, CategoryServiceProxy } from './../../shared/service-proxies/service-proxies';
+import { CustomerServiceProxy, CategoryServiceProxy, LessonServiceProxy, ArticleServiceProxy } from './../../shared/service-proxies/service-proxies';
 import { ViewDemoModelModalComponent } from './demo-model/view-demo-model-modal.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -19,6 +19,8 @@ import { CustomerComponent } from './customer/customer.component';
 import { ViewCustomerModalComponent } from './customer/view-customer-modal.component';
 import { CreateOrEditCustomerModalComponent } from './customer/create-or-edit-customer-modal.component';
 import { CategoryComponent } from './category/category.component';
+import { ReadWriteComponent } from './read_write/read_write.component';
+import { ReadWriteLessonComponent } from './read_write_lesson/read_write_lesson.component';
 
 @NgModule({
     imports: [
@@ -43,12 +45,16 @@ import { CategoryComponent } from './category/category.component';
         MenuClientComponent, CreateOrEditMenuClientModalComponent,
         DemoModelComponent, CreateOrEditDemoModelModalComponent, ViewDemoModelModalComponent,
         CustomerComponent, CreateOrEditCustomerModalComponent, ViewCustomerModalComponent,
-        CategoryComponent
+        CategoryComponent,
+        ReadWriteComponent,
+        ReadWriteLessonComponent
     ],
     providers: [
         DemoModelServiceProxy,
         CustomerServiceProxy,
-        CategoryServiceProxy
+        CategoryServiceProxy,
+        LessonServiceProxy,
+        ArticleServiceProxy
     ]
 })
 export class GWebsiteModule { }

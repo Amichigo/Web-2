@@ -1,0 +1,47 @@
+<div>
+    <div class="container-fluid bgimage-color">
+        <img class="mx-auto d-block img-fluid" src="assets/Banner/Eng_banner.jpg" alt="Responsive image">
+    </div>
+    <br>
+    <div class="container">
+        <div class="primeng-datatable-container" [busyIf]="primengTableHelper.isLoading">
+            <p-table #dataTable (onLazyLoad)="getReadWriteLessons($event)" [value]="primengTableHelper.records"
+                     rows="{{primengTableHelper.defaultRecordsCountPerPage}}" [paginator]="false" [lazy]="true"
+                     [responsive]="primengTableHelper.isResponsive">
+                <ng-template pTemplate="body" let-record="$implicit" class="row-eq-height">
+                    <a routerLink ="/app/gwebsite/read_write_lesson/{{record.id}}">
+                        <div class="col-3 border border-light rounded overflow-auto d-flex flex-column">
+                            <img class="d-block mx-auto img-fluid rounded" src="{{truncateString(record.introImage)}}">
+                            <h1>{{truncateString(record.lessonContent)}}</h1>
+                        </div>
+                    </a>
+                </ng-template>
+            </p-table>
+            <div class="primeng-no-data" *ngIf="primengTableHelper.totalRecordsCount == 0">
+                {{l('NoData')}}
+            </div>
+            <div class="primeng-paging-container">
+                <p-paginator rows="{{primengTableHelper.defaultRecordsCountPerPage}}" #paginator
+                             (onPageChange)="getReadWriteLessons($event)"
+                             [totalRecords]="primengTableHelper.totalRecordsCount"
+                             [rowsPerPageOptions]="primengTableHelper.predefinedRecordsCountPerPage">
+                </p-paginator>
+                <span class="total-records-count">
+                    {{l('TotalRecordsCount', primengTableHelper.totalRecordsCount)}}
+                </span>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <div class="container-fluid" id="footer">
+        <div class="container">
+            <br>
+            <h2 class="text-light">Developer Team:</h2>
+            <h5 class="text-light"> Tran Hoang An</h5>
+            <h5 class="text-light"> Cao Minh huy</h5>
+            <h5 class="text-light"> Nguyen Le Hoai An</h5>
+        </div>
+    </div>
+</div>

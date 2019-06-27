@@ -1,9 +1,12 @@
 import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { MenuClientComponent } from '@app/gwebsite/menu-client/menu-client.component';
 import { DemoModelComponent } from './demo-model/demo-model.component';
 import { CustomerComponent } from './customer/customer.component';
 import { CategoryComponent } from './category/category.component';
+import { ReadWriteComponent } from './read_write/read_write.component';
+import { ReadWriteLessonComponent } from './read_write_lesson/read_write_lesson.component';
+
 
 @NgModule({
     imports: [
@@ -41,6 +44,24 @@ import { CategoryComponent } from './category/category.component';
                     {
                         path: 'category', component: CategoryComponent,
                         data: { permission: 'Pages.Administration.Category' }
+                    },
+                ]
+            },
+            {
+                path: '',
+                children: [
+                    {
+                        path: 'read_write', component: ReadWriteComponent,
+                        data: { permission: 'Pages.Administration.Category' }
+                    },
+                ]
+            },
+            {
+                path: '',
+                children: [
+                    {
+                        path: 'read_write_lesson/:id', component: ReadWriteLessonComponent,
+                        data: { permission: 'Pages.Administration.Lesson' }
                     },
                 ]
             }
