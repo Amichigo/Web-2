@@ -46,6 +46,25 @@ namespace GWebsite.AbpZeroTemplate.Core.Authorization
             customer.CreateChildPermission(GWebsitePermissions.Pages_Administration_Customer_Edit, L("EditingCustomer"));
             customer.CreateChildPermission(GWebsitePermissions.Pages_Administration_Customer_Delete, L("DeletingCustomer"));
 
+            var comment = gwebsite.CreateChildPermission(GWebsitePermissions.Pages_Administration_Comment, L("Comment"));
+            comment.CreateChildPermission(GWebsitePermissions.Pages_Administration_Comment_Create, L("CreatingNewComment"));
+            comment.CreateChildPermission(GWebsitePermissions.Pages_Administration_Comment_Delete, L("DeletingComment"));
+            comment.CreateChildPermission(GWebsitePermissions.Pages_Administration_Comment_Edit, L("EditingComment"));
+
+            var article = gwebsite.CreateChildPermission(GWebsitePermissions.Pages_Administration_Article, L("Article"));
+            article.CreateChildPermission(GWebsitePermissions.Pages_Administration_Article_Create, L("CreatingArticle"));
+            article.CreateChildPermission(GWebsitePermissions.Pages_Administration_Article_Delete, L("DeletingArticle"));
+            article.CreateChildPermission(GWebsitePermissions.Pages_Administration_Article_Edit, L("EditingArticle"));
+
+            var category = gwebsite.CreateChildPermission(GWebsitePermissions.Pages_Administration_Category, L("Category"));
+            category.CreateChildPermission(GWebsitePermissions.Pages_Administration_Category_Create, L("CreatingNewCategory"));
+            category.CreateChildPermission(GWebsitePermissions.Pages_Administration_Category_Edit, L("EditingCategory"));
+            category.CreateChildPermission(GWebsitePermissions.Pages_Administration_Category_Delete, L("DeletingCategory"));
+
+            var lesson = gwebsite.CreateChildPermission(GWebsitePermissions.Pages_Administration_Lesson, L("Lesson"));
+            lesson.CreateChildPermission(GWebsitePermissions.Pages_Administration_Lesson_Create, L("CreatingNewLesson"));
+            lesson.CreateChildPermission(GWebsitePermissions.Pages_Administration_Lesson_Edit, L("EditingLesson"));
+            lesson.CreateChildPermission(GWebsitePermissions.Pages_Administration_Lesson_Delete, L("DeletingLesson"));
         }
 
         private static ILocalizableString L(string name)

@@ -1,4 +1,4 @@
-import { CustomerServiceProxy } from './../../shared/service-proxies/service-proxies';
+import { CustomerServiceProxy, CategoryServiceProxy, LessonServiceProxy } from './../../shared/service-proxies/service-proxies';
 import { ViewDemoModelModalComponent } from './demo-model/view-demo-model-modal.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -18,7 +18,14 @@ import { DemoModelServiceProxy } from '@shared/service-proxies/service-proxies';
 import { CustomerComponent } from './customer/customer.component';
 import { ViewCustomerModalComponent } from './customer/view-customer-modal.component';
 import { CreateOrEditCustomerModalComponent } from './customer/create-or-edit-customer-modal.component';
+import { CategoryComponent } from './category/category.component';
+import { ListenWatchComponent } from './ListenWatch/listenwatch.component';
+import { ViewListenWatchComponent } from './ListenWatch/view-listenwatch.component';
 
+import {VgCoreModule} from 'videogular2/core';
+import {VgControlsModule} from 'videogular2/controls';
+import {VgOverlayPlayModule} from 'videogular2/overlay-play';
+import {VgBufferingModule} from 'videogular2/buffering';
 @NgModule({
     imports: [
         FormsModule,
@@ -36,16 +43,24 @@ import { CreateOrEditCustomerModalComponent } from './customer/create-or-edit-cu
         PrimeNgFileUploadModule,
         AutoCompleteModule,
         EditorModule,
-        InputMaskModule
+        InputMaskModule,
+        VgCoreModule,
+        VgControlsModule,
+        VgOverlayPlayModule,
+        VgBufferingModule
     ],
     declarations: [
         MenuClientComponent, CreateOrEditMenuClientModalComponent,
         DemoModelComponent, CreateOrEditDemoModelModalComponent, ViewDemoModelModalComponent,
         CustomerComponent, CreateOrEditCustomerModalComponent, ViewCustomerModalComponent,
+        CategoryComponent,
+        ListenWatchComponent,ViewListenWatchComponent
     ],
     providers: [
         DemoModelServiceProxy,
-        CustomerServiceProxy
+        CustomerServiceProxy,
+        CategoryServiceProxy,
+        LessonServiceProxy
     ]
 })
 export class GWebsiteModule { }

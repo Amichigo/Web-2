@@ -1,8 +1,12 @@
 using AutoMapper;
 using GWebsite.AbpZeroTemplate.Application.Share.Customers.Dto;
+using GWebsite.AbpZeroTemplate.Application.Share.Lessons.Dto;
 using GWebsite.AbpZeroTemplate.Application.Share.DemoModels.Dto;
 using GWebsite.AbpZeroTemplate.Application.Share.MenuClients.Dto;
+using GWebsite.AbpZeroTemplate.Application.Share.Categories.Dto;
 using GWebsite.AbpZeroTemplate.Core.Models;
+using GWebsite.AbpZeroTemplate.Application.Share.Articles.Dto;
+using GWebsite.AbpZeroTemplate.Application.Share.Comments.Dto;
 
 namespace GWebsite.AbpZeroTemplate.Applications
 {
@@ -26,6 +30,27 @@ namespace GWebsite.AbpZeroTemplate.Applications
             configuration.CreateMap<CustomerInput, Customer>();
             configuration.CreateMap<Customer, CustomerInput>();
             configuration.CreateMap<Customer, CustomerForViewDto>();
+
+            // Category
+            configuration.CreateMap<Category, CategoryDto>();
+            configuration.CreateMap<CategoryInput, Category>();
+            configuration.CreateMap<Category, CategoryInput>();
+            configuration.CreateMap<Category, CategoryForViewDto>();
+
+            // Lesson
+            configuration.CreateMap<Lesson, LessonDto>();
+            configuration.CreateMap<LessonInput, Lesson>();
+            configuration.CreateMap<Lesson, LessonInput>();
+            configuration.CreateMap<Lesson, LessonForViewDto>();
+
+            configuration.CreateMap<Article, ArticleDto>();
+            configuration.CreateMap<ArticleInput, Article>();
+            configuration.CreateMap<Article, ArticleInput>();
+            configuration.CreateMap<Article, ArticleForView>();
+
+            configuration.CreateMap<Comment, CommentDto>();
+            configuration.CreateMap<CommentInput, Comment>();
+            configuration.CreateMap<Comment, CommentInput>();
         }
     }
 }

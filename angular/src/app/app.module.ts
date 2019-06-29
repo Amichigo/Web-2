@@ -34,6 +34,9 @@ import { UserNotificationHelper } from './shared/layout/notifications/UserNotifi
 import { HeaderNotificationsComponent } from './shared/layout/notifications/header-notifications.component';
 import { NotificationSettingsModalComponent } from './shared/layout/notifications/notification-settings-modal.component';
 import { NotificationsComponent } from './shared/layout/notifications/notifications.component';
+import { Globals } from './globals';
+
+
 
 @NgModule({
     declarations: [
@@ -80,7 +83,8 @@ import { NotificationsComponent } from './shared/layout/notifications/notificati
         LinkedAccountService,
         UserNotificationHelper,
         ChatSignalrService,
-        QuickSideBarChat
+        QuickSideBarChat,
+        Globals
     ]
 })
 export class AppModule { }

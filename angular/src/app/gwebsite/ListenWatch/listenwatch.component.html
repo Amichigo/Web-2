@@ -1,0 +1,45 @@
+<div [@routerTransition]>
+
+<div>
+    <div class="container-fluid bgimage-color">
+        <img class="mx-auto d-block" src="assets/Banner/Eng_banner.jpg" class="img-fluid" alt="Responsive image">
+    </div>
+    <br>
+    <div class="container intro">
+        <h1>Listen And Watch</h1>
+        <div style="word-wrap:break-word;">
+            {{globals.role}}
+            Do you like listening to songs and watching stories and videos in English? In this section you can learn to sing songs in English and watch fun stories and videos.
+        </div>
+    </div>
+    <br>
+    <div class="container">
+        <div class="row row-eq-height">
+            <div class="col-3 border border-light rounded overflow-auto d-flex flex-column" *ngFor="let item of lessons">
+                <img class="d-block mx-auto img-fluid rounded" src="{{item.introImage}}">
+                <!-- <h1>{{item.catName}}</h1> -->
+                <br>
+                <div style="word-wrap:break-word;">{{item.lessonContent}}</div>
+                <button class="mt-auto btn btn-info" (click)="viewListenWatch.show(item.id)">
+                    <h3>
+                        <!--<a href="#"> MORE --→</a>-->
+                        MORE -->
+                    </h3>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <div class="container-fluid" id="footer">
+        <div class="container">
+            <br>
+            <h2 class="text-light">Developer Team:</h2>
+            <h5 class="text-light"> Tran Hoang An</h5>
+            <h5 class="text-light"> Cao Minh huy</h5>
+            <h5 class="text-light"> Nguyen Le Hoai An</h5>
+        </div>
+    </div>
+</div>
+<viewListenWatch #viewListenWatch></viewListenWatch>
+</div>
