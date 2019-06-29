@@ -18,12 +18,18 @@ import { DemoModelServiceProxy } from '@shared/service-proxies/service-proxies';
 import { CustomerComponent } from './customer/customer.component';
 import { ViewCustomerModalComponent } from './customer/view-customer-modal.component';
 import { CreateOrEditCustomerModalComponent } from './customer/create-or-edit-customer-modal.component';
-import { CategoryComponent } from './category/category.component';
 import { ReadWriteComponent } from './read_write/read_write.component';
 import { ReadWriteLessonComponent } from './read_write_lesson/read_write_lesson.component';
 import { CreateOrEditRWLessonModalComponent } from './read_write/create-or-edit-read-write-lesson.component';
 import { ArticleComponent } from './article/article.component';
+import { CategoryComponent } from './category/category.component';
+import { ListenWatchComponent } from './ListenWatch/listenwatch.component';
+import { ViewListenWatchComponent } from './ListenWatch/view-listenwatch.component';
 
+import {VgCoreModule} from 'videogular2/core';
+import {VgControlsModule} from 'videogular2/controls';
+import {VgOverlayPlayModule} from 'videogular2/overlay-play';
+import {VgBufferingModule} from 'videogular2/buffering';
 @NgModule({
     imports: [
         FormsModule,
@@ -41,7 +47,11 @@ import { ArticleComponent } from './article/article.component';
         PrimeNgFileUploadModule,
         AutoCompleteModule,
         EditorModule,
-        InputMaskModule
+        InputMaskModule,
+        VgCoreModule,
+        VgControlsModule,
+        VgOverlayPlayModule,
+        VgBufferingModule
     ],
     declarations: [
         MenuClientComponent, CreateOrEditMenuClientModalComponent,
@@ -50,7 +60,9 @@ import { ArticleComponent } from './article/article.component';
         CategoryComponent,
         ReadWriteComponent,
         ArticleComponent,
-        ReadWriteLessonComponent,CreateOrEditRWLessonModalComponent
+        ReadWriteLessonComponent,CreateOrEditRWLessonModalComponent,
+
+        ListenWatchComponent,ViewListenWatchComponent
     ],
     providers: [
         DemoModelServiceProxy,

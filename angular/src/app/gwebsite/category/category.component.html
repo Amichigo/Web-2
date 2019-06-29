@@ -1,6 +1,6 @@
 <div>
     <div class="container-fluid bgimage-color">
-        <img class="mx-auto d-block img-fluid" src="assets/Banner/Eng_banner.jpg" alt="Responsive image">
+        <img class="mx-auto d-block" src="assets/Banner/Eng_banner.jpg" class="img-fluid" alt="Responsive image">
     </div>
     <br>
     <div class="container intro">
@@ -21,13 +21,29 @@
                 <div style="word-wrap:break-word;">{{item.catContent}}</div>
                 <button class="mt-auto btn btn-info">
                     <h3>
-                        <a href="#"> MORE --→ </a>
+                        <div *ngIf="item.id == 1">
+                            <a href="./app/gwebsite/listenwatch"> MORE --→ </a>
+                        </div>
+                        <div *ngIf="item.id == 2">
+                                <a href=""> MORE --→ </a>
+                        </div>
+                        <div *ngIf="item.id == 3">
+                                <a href="#"> MORE --→ </a>
+                        </div>
+                        <div *ngIf="item.id == 4">
+                                <a href="#"> MORE --→ </a>
+                        </div>
                     </h3>
                 </button>
+
+                
             </div>
         </div>
     </div>
-    <br>
+    <br> 
+    <div>
+     
+    </div>
     <br>
     <div class="container-fluid" id="footer">
         <div class="container">

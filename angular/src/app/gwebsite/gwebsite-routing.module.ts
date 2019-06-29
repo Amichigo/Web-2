@@ -1,12 +1,13 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule,Router } from '@angular/router';
 import { MenuClientComponent } from '@app/gwebsite/menu-client/menu-client.component';
 import { DemoModelComponent } from './demo-model/demo-model.component';
 import { CustomerComponent } from './customer/customer.component';
 import { CategoryComponent } from './category/category.component';
 import { ReadWriteComponent } from './read_write/read_write.component';
 import { ReadWriteLessonComponent } from './read_write_lesson/read_write_lesson.component';
-import { FileuploadComponent } from './fileupload/fileupload.component'
+
+import {ListenWatchComponent} from './ListenWatch/listenwatch.component';
 
 
 @NgModule({
@@ -65,7 +66,19 @@ import { FileuploadComponent } from './fileupload/fileupload.component'
                         data: { permission: 'Pages.Administration.Lesson' }
                     },
                 ]
+            
+            },
+            
+            {
+                path: '',
+                children: [
+                    {
+                        path: 'listenwatch', component: ListenWatchComponent,
+                        data: { permission: 'Pages.Administration.Lesson' }
+                    },
+                ]
             }
+
         ])
     ],
     exports: [
