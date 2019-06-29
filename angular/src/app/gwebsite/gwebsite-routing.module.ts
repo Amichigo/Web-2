@@ -6,6 +6,7 @@ import { CustomerComponent } from './customer/customer.component';
 import { CategoryComponent } from './category/category.component';
 import { ReadWriteComponent } from './read_write/read_write.component';
 import { ReadWriteLessonComponent } from './read_write_lesson/read_write_lesson.component';
+import { FileuploadComponent } from './fileupload/fileupload.component'
 
 
 @NgModule({

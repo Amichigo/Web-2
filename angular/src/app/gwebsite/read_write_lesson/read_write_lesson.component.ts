@@ -4,16 +4,20 @@ import { appModuleAnimation } from '@shared/animations/routerTransition';
 import { AppComponentBase } from '@shared/common/app-component-base';
 import * as _ from 'lodash';
 import { LessonForViewDto, LessonServiceProxy, ArticleInput, ArticleServiceProxy, GetCurrentLoginInformationsOutput, GetUserForEditOutput, SessionServiceProxy, UserServiceProxy } from '@shared/service-proxies/service-proxies';
+import { ArticleComponent } from '../article/article.component';
 
 @Component({
-    selector:'read-write-lesson',
+    selector: 'read-write-lesson',
     templateUrl: './read_write_lesson.component.html',
-    animations: [appModuleAnimation()]
+    animations: [appModuleAnimation()],
+    styles: ['.disapear{display:none}']
 })
-export class ReadWriteLessonComponent extends AppComponentBase implements OnInit {
+export class ReadWriteLessonComponent extends AppComponentBase implements AfterViewInit, OnInit {
     lesson: LessonForViewDto = new LessonForViewDto();
     article: ArticleInput = new ArticleInput();
+    isDefined: boolean = false;
     currentSession: GetCurrentLoginInformationsOutput = new GetCurrentLoginInformationsOutput();
+    @ViewChild('articleSection') articleSection: ArticleComponent;
     type: string = "";
     id: string = "";
     saving: boolean = false;
@@ -37,9 +41,21 @@ export class ReadWriteLessonComponent extends AppComponentBase implements OnInit
         this.init();
     }
 
+    ngAfterViewInit(): void {
+    }
+
+    topicIsDefined(): boolean {
+        if (this.lesson.lessonContent != null) {
+            return true;
+        }
+        else return false;
+    }
+
     getLesson(id: number): void {
         this._lessonService.getLessonForEdit(id).subscribe(result => {
             this.lesson = result;
+            this.type = this.getTypeFromLessonLink(this.lesson.link);
+            console.log(this.type);
         })
     }
 
@@ -58,12 +74,14 @@ export class ReadWriteLessonComponent extends AppComponentBase implements OnInit
 
     save(): void {
         let input = this.article;
+        console.log(this.article.content);
         this.saving = true;
         input.catName = this.lesson.catName;
         input.topic = this.lesson.lessonContent;
         input.userId = this.currentSession.user.id;
         this._articleService.createOrEditArticle(input).subscribe(result => {
             this.notify.info(this.l('Saved Successfully'));
+            this.saving = false;
         })
     }
 

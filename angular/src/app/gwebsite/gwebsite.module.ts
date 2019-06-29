@@ -21,6 +21,8 @@ import { CreateOrEditCustomerModalComponent } from './customer/create-or-edit-cu
 import { CategoryComponent } from './category/category.component';
 import { ReadWriteComponent } from './read_write/read_write.component';
 import { ReadWriteLessonComponent } from './read_write_lesson/read_write_lesson.component';
+import { CreateOrEditRWLessonModalComponent } from './read_write/create-or-edit-read-write-lesson.component';
+import { ArticleComponent } from './article/article.component';
 
 @NgModule({
     imports: [
@@ -47,7 +49,8 @@ import { ReadWriteLessonComponent } from './read_write_lesson/read_write_lesson.
         CustomerComponent, CreateOrEditCustomerModalComponent, ViewCustomerModalComponent,
         CategoryComponent,
         ReadWriteComponent,
-        ReadWriteLessonComponent
+        ArticleComponent,
+        ReadWriteLessonComponent,CreateOrEditRWLessonModalComponent
     ],
     providers: [
         DemoModelServiceProxy,
