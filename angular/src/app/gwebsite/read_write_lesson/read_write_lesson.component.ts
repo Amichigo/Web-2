@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, Injector, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, Injector, OnInit, ViewChild, EventEmitter, Output } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { appModuleAnimation } from '@shared/animations/routerTransition';
 import { AppComponentBase } from '@shared/common/app-component-base';
@@ -15,6 +15,7 @@ import { ArticleComponent } from '../article/article.component';
 export class ReadWriteLessonComponent extends AppComponentBase implements AfterViewInit, OnInit {
     lesson: LessonForViewDto = new LessonForViewDto();
     article: ArticleInput = new ArticleInput();
+    defaultMarkValue:string = "not marked"
     isDefined: boolean = false;
     currentSession: GetCurrentLoginInformationsOutput = new GetCurrentLoginInformationsOutput();
     @ViewChild('articleSection') articleSection: ArticleComponent;
@@ -79,6 +80,7 @@ export class ReadWriteLessonComponent extends AppComponentBase implements AfterV
         input.catName = this.lesson.catName;
         input.topic = this.lesson.lessonContent;
         input.userId = this.currentSession.user.id;
+        input.mark = this.defaultMarkValue;
         this._articleService.createOrEditArticle(input).subscribe(result => {
             this.notify.info(this.l('Saved Successfully'));
             this.saving = false;

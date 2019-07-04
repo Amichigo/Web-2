@@ -74,9 +74,12 @@ namespace GWebsite.AbpZeroTemplate.Web.Core.Lessons
             // filter by value
             if (input.CatName != null)
             {
-                query = query.Where(x => x.CatName.ToLower().Equals(input.CatName));
+                query = query.Where(x => x.CatName.ToLower().Contains(input.CatName));
             }
-
+            if (input.lessonContent != null)
+            {
+                query = query.Where(x => x.LessonContent.ToLower().Contains(input.lessonContent));
+            }
             var totalCount = query.Count();
 
             // sorting

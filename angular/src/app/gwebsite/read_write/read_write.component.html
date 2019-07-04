@@ -9,12 +9,44 @@
             <i class="fa fa-plus"></i> {{l("CreateNewLesson")}}
         </button>
     </div>
+    <br />
     <div class="container">
+        <form autocomplete="off">
+            <div class="m-form m-form--label-align-right" id="TextsFilterForm">
+                <div class="row align-items-center m--margin-bottom-10">
+                    <div class="col-sm-12">
+                        <div class="input-group">
+                            <input [(ngModel)]="lessonName" name="lessonName" autoFocus class="form-control" style="margin-left:3%"
+                                   placeholder="Nhập tên lesson" type="text">
+                            <span class="input-group-btn">
+                                <button (click)="applyFilters()" class="btn btn-primary" type="submit">
+                                    <i class="icon-refresh"></i>
+                                    {{l("Refresh")}}
+                                </button>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
         <div class="primeng-datatable-container" [busyIf]="primengTableHelper.isLoading">
             <p-table #dataTable (onLazyLoad)="getReadWriteLessons($event)" [value]="primengTableHelper.records"
                      rows="{{primengTableHelper.defaultRecordsCountPerPage}}" [paginator]="false" [lazy]="true"
                      [responsive]="primengTableHelper.isResponsive">
                 <ng-template pTemplate="body" let-record="$implicit" class="d-flex flex-row">
+                    <tr style="display:inline-table;background-color:#ffffff!important;opacity:0.7;border:1px solid #cce0ff;margin-left:3%">
+                        <td>
+                            <button class="btn m-btn m-btn--hover-accent m-btn--icon m-btn--icon-only m-btn--pill"
+                                    *ngIf="isGranted('Pages.Administration.Lesson.Edit')" (click)="createOrEditModal.show(record.id)" title="{{l('Edit')}}">
+                                <i class="fa fa-edit" [attr.aria-label]="l('Edit')"></i>
+                            </button>
+
+                            <button class="btn m-btn m-btn--hover-accent m-btn--icon m-btn--icon-only m-btn--pill"
+                                    *ngIf="isGranted('Pages.Administration.Lesson.Delete')" (click)="deleteLesson(record.id)" title="{{l('Delete')}}">
+                                <i class="fa fa-times" [attr.aria-label]="l('Delete')"></i>
+                            </button>
+                        </td>
+                    </tr>
                     <a class="d-block p-3 mb-3 text-dark border border-warning rounded bg-warning" routerLink="/app/gwebsite/read_write_lesson/{{record.id}}" style="text-align:center;margin-left:3%">
                         <div class="row">
                             <div class="col-3 d-inline"><h1>{{getTypeFromLessonLink(record.link)}}</h1></div>
@@ -24,19 +56,7 @@
                             </div>
                         </div>
                     </a>
-                    <tr>
-                        <td>
-                            <button class="btn m-btn m-btn--hover-accent m-btn--icon m-btn--icon-only m-btn--pill"
-                                    (click)="createOrEditModal.show(record.id)" title="{{l('Edit')}}">
-                                <i class="fa fa-edit" [attr.aria-label]="l('Edit')"></i>
-                            </button>
-
-                            <button class="btn m-btn m-btn--hover-accent m-btn--icon m-btn--icon-only m-btn--pill"
-                                    (click)="deleteLesson(record.id)" title="{{l('Delete')}}">
-                                <i class="fa fa-times" [attr.aria-label]="l('Delete')"></i>
-                            </button>
-                        </td>
-                    </tr>
+                    <hr style="border: 1px solid yellow;opacity:0.2;margin-left:3%" />
                 </ng-template>
             </p-table>
             <div class="primeng-no-data" *ngIf="primengTableHelper.totalRecordsCount == 0">
@@ -48,7 +68,7 @@
                              [totalRecords]="primengTableHelper.totalRecordsCount"
                              [rowsPerPageOptions]="primengTableHelper.predefinedRecordsCountPerPage">
                 </p-paginator>
-                <span class="total-records-count">
+                <span class="total-records-count" style="display:none">
                     {{l('TotalRecordsCount', primengTableHelper.totalRecordsCount)}}
                 </span>
             </div>

@@ -1,6 +1,6 @@
 <div>
     <div class="m-head">
-        <h3>---Comments---</h3>
+        <h3>---Articles---</h3>
     </div>
     <div class="m-content">
         <div class="m-portlet m-portlet--mobile">
@@ -14,12 +14,20 @@
 
                             <ng-template pTemplate="body" let-record="$implicit">
                                 <tr>
-                                    <td style="width:90%">
+                                    <td style="width:10%">
+                                        <span title="{{record.userId}}"><h6>#User {{record.userId}}</h6></span>
+                                    </td>
+                                    <td style="width:75%">
                                         <span title="{{record.content}}">{{truncateString(record.content)}}</span>
                                     </td>
-                                    <td style="width:10%">
+                                    <td style="width:10%"><span style="color:brown" title="{{record.mark}}"><h6>Mark:{{record.mark}}</h6></span></td>
+                                    <td style="width:5%">
                                         <button class="btn m-btn m-btn--hover-accent m-btn--icon m-btn--icon-only m-btn--pill"
-                                                (click)="deleteArticle(record.id)" title="{{l('Delete')}}">
+                                                *ngIf="isGranted('Pages.Administration.Article.Edit')" (click)="ArticleSelected(record)" data-toggle="modal" data-target="#myModal" title="{{l('Mark')}}">
+                                            <i class="fa fa-times" [attr.aria-label]="l('Edit')"></i>
+                                        </button>
+                                        <button class="btn m-btn m-btn--hover-accent m-btn--icon m-btn--icon-only m-btn--pill"
+                                                *ngIf="isGranted('Pages.Administration.Article.Delete')" (click)="deleteArticle(record.id)" title="{{l('Delete')}}">
                                             <i class="fa fa-times" [attr.aria-label]="l('Delete')"></i>
                                         </button>
                                     </td>
@@ -29,7 +37,7 @@
                         <div class="primeng-no-data" *ngIf="primengTableHelper.totalRecordsCount == 0">
                             {{l('No Comments')}}
                         </div>
-                        <div class="primeng-paging-container"  style="display:none">
+                        <div class="primeng-paging-container" style="display:none">
                             <p-paginator rows="{{primengTableHelper.defaultRecordsCountPerPage}}" #paginator
                                          (onPageChange)="getArticles($event)"
                                          [totalRecords]="primengTableHelper.totalRecordsCount"
@@ -40,6 +48,29 @@
                     <!--<Primeng-TurboTable-End>-->
                 </div>
             </div>
+        </div>
+    </div>
+    <div bsModal #mark="bs-modal" class="modal fade" id="myModal" role="dialog" aria-labelledby="mark">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <form #editForm="ngForm" novalidate (ngSubmit)="save()">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <h5>Enter mark here:</h5>
+                        <input type="number" max="10" min=" 5" name="articleMark" [(ngModel)]="articleMark" />
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fa fa-save"></i>
+                            <span>{{l("Save")}}</span>
+                        </button>
+                    </div>
+                </div>
+            </form>
         </div>
     </div>
 </div>

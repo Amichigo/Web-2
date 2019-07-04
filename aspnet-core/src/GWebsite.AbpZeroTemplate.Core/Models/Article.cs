@@ -12,5 +12,6 @@ namespace GWebsite.AbpZeroTemplate.Core.Models
         public string Topic { get; set; } // tên của lesson 
         public string Content { get; set; }
         public int UserId { get; set; }
+        public string Mark { get; set; }
     }
 }

@@ -7,6 +7,7 @@ import { LazyLoadEvent } from 'primeng/components/common/lazyloadevent';
 import { Paginator } from 'primeng/components/paginator/paginator';
 import { Table } from 'primeng/components/table/table';
 import { ArticleServiceProxy, ArticleDto } from '@shared/service-proxies/service-proxies';
+import { ModalDirective } from 'ngx-bootstrap';
 
 @Component({
     templateUrl: './article.component.html',
@@ -18,6 +19,8 @@ export class ArticleComponent extends AppComponentBase implements AfterViewInit,
     /**
      * @ViewChild là dùng get control và call thuộc tính, functions của control đó
      */
+    selectedArticle: ArticleDto = new ArticleDto();
+    @ViewChild('mark') modal: ModalDirective;
     @ViewChild('dataTable') dataTable: Table;
     @ViewChild('paginator') paginator: Paginator;
 
@@ -25,7 +28,7 @@ export class ArticleComponent extends AppComponentBase implements AfterViewInit,
      * tạo các biến dể filters
      */
     @Input() articleName: string;
-
+    articleMark: number;
     constructor(
         injector: Injector,
         private _articleService: ArticleServiceProxy,
@@ -85,6 +88,21 @@ export class ArticleComponent extends AppComponentBase implements AfterViewInit,
 
     reloadPage(): void {
         this.paginator.changePage(this.paginator.getPage());
+    }
+
+    ArticleSelected(input): void {
+        this.selectedArticle = input;
+        console.log(this.selectedArticle);
+    }
+
+    save(): void {
+        let input = this.selectedArticle;
+        input.mark = this.articleMark.toString();
+        this._articleService.createOrEditArticle(input).subscribe(result => {
+            this.notify.info(this.l('SavedSuccessfully'));
+            this.modal.hide();
+            this.reloadPage();
+        })
     }
 
     /**
