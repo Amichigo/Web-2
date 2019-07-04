@@ -25,6 +25,7 @@ import { ArticleComponent } from './article/article.component';
 import { CategoryComponent } from './category/category.component';
 import { ListenWatchComponent } from './ListenWatch/listenwatch.component';
 import { ViewListenWatchComponent } from './ListenWatch/view-listenwatch.component';
+import {CreateOrEditLWLessonModalComponent} from './ListenWatch/create-or-edit-listen-watch.component';
 
 import {VgCoreModule} from 'videogular2/core';
 import {VgControlsModule} from 'videogular2/controls';
@@ -62,7 +63,7 @@ import {VgBufferingModule} from 'videogular2/buffering';
         ArticleComponent,
         ReadWriteLessonComponent,CreateOrEditRWLessonModalComponent,
 
-        ListenWatchComponent,ViewListenWatchComponent
+        ListenWatchComponent,ViewListenWatchComponent,CreateOrEditLWLessonModalComponent
     ],
     providers: [
         DemoModelServiceProxy,
