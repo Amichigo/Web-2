@@ -18,6 +18,7 @@ export class AppNavigationService {
             new AppMenuItem('Editions', 'Pages.Editions', 'flaticon-app', '/app/admin/editions'),
             new AppMenuItem('Home', 'Pages.Administration.Category', 'flaticon-menu-1', '/app/gwebsite/category'),
             new AppMenuItem('Read & Write', 'Pages.Administration.Lesson', 'flaticon-menu-1', '/app/gwebsite/read_write'),
+            new AppMenuItem('Grammar & Vocabulary', 'Pages.Administration.Lesson', 'flaticon-menu-1', '/app/gwebsite/grammar_vocab'),
             new AppMenuItem('Administration', '', 'flaticon-interface-8', '', [
                 new AppMenuItem('MenuClient', 'Pages.Administration.MenuClient', 'flaticon-menu-1', '/app/gwebsite/menu-client'),
                 new AppMenuItem('DemoModel', 'Pages.Administration.DemoModel', 'flaticon-menu-1', '/app/gwebsite/demo-model'),

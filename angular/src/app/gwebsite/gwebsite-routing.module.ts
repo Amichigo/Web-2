@@ -6,6 +6,8 @@ import { CustomerComponent } from './customer/customer.component';
 import { CategoryComponent } from './category/category.component';
 import { ReadWriteComponent } from './read_write/read_write.component';
 import { ReadWriteLessonComponent } from './read_write_lesson/read_write_lesson.component';
+import { GrammarVocabComponent} from './grammar_vocab/grammar_vocab.component'
+import { GrammarVocabLessonComponent} from './grammar_vocab_lesson/grammar_vocab_lesson.component'
 
 import {ListenWatchComponent} from './ListenWatch/listenwatch.component';
 
@@ -63,6 +65,26 @@ import {ListenWatchComponent} from './ListenWatch/listenwatch.component';
                 children: [
                     {
                         path: 'read_write_lesson/:id', component: ReadWriteLessonComponent,
+                        data: { permission: 'Pages.Administration.Lesson' }
+                    },
+                ]
+            
+            },
+
+            {
+                path: '',
+                children: [
+                    {
+                        path: 'grammar_vocab', component: GrammarVocabComponent,
+                        data: { permission: 'Pages.Administration.Category' }
+                    },
+                ]
+            },
+            {
+                path: '',
+                children: [
+                    {
+                        path: 'grammar_vocab_lesson/:id', component: GrammarVocabLessonComponent,
                         data: { permission: 'Pages.Administration.Lesson' }
                     },
                 ]

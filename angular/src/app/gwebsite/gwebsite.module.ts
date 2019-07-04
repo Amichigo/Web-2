@@ -21,6 +21,9 @@ import { CreateOrEditCustomerModalComponent } from './customer/create-or-edit-cu
 import { ReadWriteComponent } from './read_write/read_write.component';
 import { ReadWriteLessonComponent } from './read_write_lesson/read_write_lesson.component';
 import { CreateOrEditRWLessonModalComponent } from './read_write/create-or-edit-read-write-lesson.component';
+import { GrammarVocabComponent } from './grammar_vocab/grammar_vocab.component';
+import { GrammarVocabLessonComponent } from './grammar_vocab_lesson/grammar_vocab_lesson.component';
+import { CreateOrEditGVLessonModalComponent } from './grammar_vocab/create-or-edit-grammar-vocab-lesson.component';
 import { ArticleComponent } from './article/article.component';
 import { CategoryComponent } from './category/category.component';
 import { ListenWatchComponent } from './ListenWatch/listenwatch.component';
@@ -30,6 +33,7 @@ import {VgCoreModule} from 'videogular2/core';
 import {VgControlsModule} from 'videogular2/controls';
 import {VgOverlayPlayModule} from 'videogular2/overlay-play';
 import {VgBufferingModule} from 'videogular2/buffering';
+
 @NgModule({
     imports: [
         FormsModule,
@@ -48,7 +52,7 @@ import {VgBufferingModule} from 'videogular2/buffering';
         AutoCompleteModule,
         EditorModule,
         InputMaskModule,
-        VgCoreModule,
+		VgCoreModule,
         VgControlsModule,
         VgOverlayPlayModule,
         VgBufferingModule
@@ -61,6 +65,8 @@ import {VgBufferingModule} from 'videogular2/buffering';
         ReadWriteComponent,
         ArticleComponent,
         ReadWriteLessonComponent,CreateOrEditRWLessonModalComponent,
+        GrammarVocabComponent,
+        GrammarVocabLessonComponent,CreateOrEditGVLessonModalComponent,
 
         ListenWatchComponent,ViewListenWatchComponent
     ],
