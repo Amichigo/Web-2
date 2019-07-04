@@ -24,7 +24,7 @@
                                     <td style="width:5%">
                                         <button class="btn m-btn m-btn--hover-accent m-btn--icon m-btn--icon-only m-btn--pill"
                                                 *ngIf="isGranted('Pages.Administration.Article.Edit')" (click)="ArticleSelected(record)" data-toggle="modal" data-target="#myModal" title="{{l('Mark')}}">
-                                            <i class="fa fa-times" [attr.aria-label]="l('Edit')"></i>
+                                            <i class="fa fa-edit" [attr.aria-label]="l('Edit')"></i>
                                         </button>
                                         <button class="btn m-btn m-btn--hover-accent m-btn--icon m-btn--icon-only m-btn--pill"
                                                 *ngIf="isGranted('Pages.Administration.Article.Delete')" (click)="deleteArticle(record.id)" title="{{l('Delete')}}">

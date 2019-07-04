@@ -38,7 +38,7 @@ export class GrammarVocabComponent extends AppComponentBase implements OnInit {
     }
 
     getGrammarVocabLessons(event?: LazyLoadEvent): void {
-        this._lessonService.getLessonsByFilter("grammar & vocab", null, this.primengTableHelper.getMaxResultCount(this.paginator, event)
+        this._lessonService.getLessonsByFilter("gramma & vocabulary",null, null, this.primengTableHelper.getMaxResultCount(this.paginator, event)
             , this.primengTableHelper.getSkipCount(this.paginator, event)).subscribe(result => {
                 this.primengTableHelper.totalRecordsCount = result.totalCount;
                 this.primengTableHelper.records = result.items;

@@ -65,6 +65,7 @@ export class GrammarVocabLessonComponent extends AppComponentBase implements Aft
         this._activatedRoute.params.subscribe((params: Params) => {
             this.id = params['id'] || '';
             this.getLesson(parseInt(this.id));
+            
         });
     }
 

@@ -13,5 +13,6 @@ namespace GWebsite.AbpZeroTemplate.Application.Share.Articles.Dto
         public string Topic { get; set; }
         public string Content { get; set; }
         public int UserId { get; set; }
+        public string Mark { get; set; }
     }
 }
