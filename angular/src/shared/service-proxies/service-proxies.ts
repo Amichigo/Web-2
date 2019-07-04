@@ -11384,6 +11384,7 @@ export class ArticleDto implements IArticleDto {
     topic!: string | undefined;
     content!: string | undefined;
     userId!: number | undefined;
+    mark!: string | undefined;
     id!: number | undefined;
 
     constructor(data?: IArticleDto) {
@@ -11401,6 +11402,7 @@ export class ArticleDto implements IArticleDto {
             this.topic = data["topic"];
             this.content = data["content"];
             this.userId = data["userId"];
+            this.mark = data["mark"];
             this.id = data["id"];
         }
     }
@@ -11418,6 +11420,7 @@ export class ArticleDto implements IArticleDto {
         data["topic"] = this.topic;
         data["content"] = this.content;
         data["userId"] = this.userId;
+        data["mark"] = this.mark;
         data["id"] = this.id;
         return data; 
     }
@@ -11428,6 +11431,7 @@ export interface IArticleDto {
     topic: string | undefined;
     content: string | undefined;
     userId: number | undefined;
+    mark: string | undefined;
     id: number | undefined;
 }
 
@@ -11436,6 +11440,7 @@ export class ArticleInput implements IArticleInput {
     topic!: string | undefined;
     content!: string | undefined;
     userId!: number | undefined;
+    mark!: string | undefined;
     id!: number | undefined;
 
     constructor(data?: IArticleInput) {
@@ -11453,6 +11458,7 @@ export class ArticleInput implements IArticleInput {
             this.topic = data["topic"];
             this.content = data["content"];
             this.userId = data["userId"];
+            this.mark = data["mark"];
             this.id = data["id"];
         }
     }
@@ -11470,6 +11476,7 @@ export class ArticleInput implements IArticleInput {
         data["topic"] = this.topic;
         data["content"] = this.content;
         data["userId"] = this.userId;
+        data["mark"] = this.mark;
         data["id"] = this.id;
         return data; 
     }
@@ -11480,6 +11487,7 @@ export interface IArticleInput {
     topic: string | undefined;
     content: string | undefined;
     userId: number | undefined;
+    mark: string | undefined;
     id: number | undefined;
 }
 

@@ -6,20 +6,15 @@ import * as _ from 'lodash';
 import { LazyLoadEvent } from 'primeng/components/common/lazyloadevent';
 import { LessonServiceProxy, LessonDto } from '@shared/service-proxies/service-proxies';
 import {Globals} from '@app/globals';
-import { Paginator } from 'primeng/primeng';
 import {ViewListenWatchComponent} from './view-listenwatch.component';
-import {CreateOrEditLWLessonModalComponent} from './create-or-edit-listen-watch.component';
 
 @Component({
     templateUrl: './listenwatch.component.html',
-    animations: [appModuleAnimation()],
-    styleUrls:['./background-animation.css']
+    animations: [appModuleAnimation()]
 })
 export class ListenWatchComponent extends AppComponentBase implements OnInit {
 
     @ViewChild('viewListenWatch') viewListenWatch: ViewListenWatchComponent;
-    @ViewChild('createOrEditModal') createOrEditModal: CreateOrEditLWLessonModalComponent;
-    @ViewChild('paginator') paginator: Paginator;
 
     lessons: LessonDto[] = [];
 
@@ -38,24 +33,10 @@ export class ListenWatchComponent extends AppComponentBase implements OnInit {
         this.getLesson();
     }
 
-    createLesson(): void {
-        this.createOrEditModal.show();
-    }
-
     getLesson(): void {
         this._catService.getLessonsByFilter("listen & watch",null, null, 9, 0).subscribe(result => {
             this.lessons = result.items;
         
         })
-    }
-
-    deleteLesson(id): void {
-        this._catService.deleteLesson(id).subscribe(() => {
-            this.reloadPage();
-        })
-    }
-
-    reloadPage(): void {
-        this.paginator.changePage(this.paginator.getPage());
     }
 }
