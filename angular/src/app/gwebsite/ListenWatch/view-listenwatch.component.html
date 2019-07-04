@@ -6,7 +6,6 @@
     <div class="container intro">
         <h1>Listen And Watch</h1>
         <div style="word-wrap:break-word;">
-            {{this.content}}
         </div>
     </div>
     <br>
@@ -49,13 +48,27 @@
                 <br>
                 <div class="video" *ngIf="this.id > 0">
                     <vg-player>
-                        <video controls>
+                        <video controls width="747" height="440">
                             <source src="{{this.linkvideo}}" type="video/mp4">
                         </video>
                     </vg-player>
                 </div>
 
             </div>
+            <form novalidate (ngSubmit)="save()">
+                <div class="form-group">
+                    <label><h3>Let's us know your feeling: </h3></label>
+                    <textarea class="form-control rounded-0" #articleInput="ngModel" name="Topic"
+                              [(ngModel)]="article.content" rows="10"></textarea>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary" [buttonBusy]="saving"
+                            [busyText]="l('SavingWithThreeDot')">
+                        <i class="fa fa-save"></i>
+                        <span>{{l("Leave Comments")}}</span>
+                    </button>
+                </div>
+            </form>
             <div class="modal-footer">
                 <button [disabled]="saving" type="button" class="btn btn-default"
                     (click)="close()">{{l("Close")}}</button>

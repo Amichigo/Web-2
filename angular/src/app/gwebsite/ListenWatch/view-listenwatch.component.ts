@@ -4,8 +4,9 @@ import { appModuleAnimation } from '@shared/animations/routerTransition';
 import { AppComponentBase } from '@shared/common/app-component-base';
 import * as _ from 'lodash';
 import { LazyLoadEvent } from 'primeng/components/common/lazyloadevent';
-import { LessonServiceProxy, LessonInput } from '@shared/service-proxies/service-proxies';
+import { LessonServiceProxy, LessonInput,ArticleInput, ArticleServiceProxy } from '@shared/service-proxies/service-proxies';
 import { ModalDirective } from 'ngx-bootstrap';
+import { ArticleComponent } from '../article/article.component';
 
 @Component({
     selector: 'viewListenWatch',
@@ -14,8 +15,9 @@ import { ModalDirective } from 'ngx-bootstrap';
 })
 export class ViewListenWatchComponent extends AppComponentBase{
     @ViewChild('viewModal') modal: ModalDirective;
-
     @ViewChild('videoPlayer') videoplayer: ElementRef;
+    @ViewChild('articleSection') articleSection: ArticleComponent;
+    article: ArticleInput = new ArticleInput();
 
     toggleVideo(event: any) {
         this.videoplayer.nativeElement.play();
@@ -27,7 +29,8 @@ export class ViewListenWatchComponent extends AppComponentBase{
 
     constructor(
         injector: Injector,
-        private _catService: LessonServiceProxy
+        private _catService: LessonServiceProxy,
+        private _articleService: ArticleServiceProxy
     ) {
         super(injector);
     }
