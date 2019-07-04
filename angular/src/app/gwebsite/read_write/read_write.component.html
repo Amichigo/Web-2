@@ -10,6 +10,24 @@
         </button>
     </div>
     <div class="container">
+        <form autocomplete="off">
+            <div class="m-form m-form--label-align-right" id="TextsFilterForm">
+                <div class="row align-items-center m--margin-bottom-10">
+                    <div class="col-sm-12">
+                        <div class="input-group">
+                            <input [(ngModel)]="lessonName" name="lessonName" autoFocus class="form-control"
+                                   placeholder="Nhập tên lesson" type="text">
+                            <span class="input-group-btn">
+                                <button (click)="applyFilters()" class="btn btn-primary" type="submit">
+                                    <i class="icon-refresh"></i>
+                                    {{l("Refresh")}}
+                                </button>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
         <div class="primeng-datatable-container" [busyIf]="primengTableHelper.isLoading">
             <p-table #dataTable (onLazyLoad)="getReadWriteLessons($event)" [value]="primengTableHelper.records"
                      rows="{{primengTableHelper.defaultRecordsCountPerPage}}" [paginator]="false" [lazy]="true"

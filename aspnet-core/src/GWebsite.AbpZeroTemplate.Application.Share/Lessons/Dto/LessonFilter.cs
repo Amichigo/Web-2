@@ -10,5 +10,6 @@ namespace GWebsite.AbpZeroTemplate.Application.Share.Lessons.Dto
     public class LessonFilter : PagedAndSortedInputDto
     {
         public string CatName { get; set; }
+        public string lessonContent { get; set; }
     }
 }

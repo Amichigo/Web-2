@@ -34,7 +34,7 @@ export class ListenWatchComponent extends AppComponentBase implements OnInit {
     }
 
     getLesson(): void {
-        this._catService.getLessonsByFilter("listen & watch", null, 9, 0).subscribe(result => {
+        this._catService.getLessonsByFilter("listen & watch",null, null, 9, 0).subscribe(result => {
             this.lessons = result.items;
         
         })

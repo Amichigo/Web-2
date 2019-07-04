@@ -17,6 +17,7 @@ import { CreateOrEditRWLessonModalComponent } from './create-or-edit-read-write-
 export class ReadWriteComponent extends AppComponentBase implements OnInit {
     lessons: LessonDto[] = [];
     chosenTopic: string;
+    lessonName: string;
     @ViewChild('dataTable') dataTable: Table;
     @ViewChild('paginator') paginator: Paginator;
     @ViewChild('createOrEditModal') createOrEditModal: CreateOrEditRWLessonModalComponent;
@@ -36,9 +37,23 @@ export class ReadWriteComponent extends AppComponentBase implements OnInit {
     createLesson(): void {
         this.createOrEditModal.show();
     }
-
     getReadWriteLessons(event?: LazyLoadEvent): void {
-        this._lessonService.getLessonsByFilter("read & write", null, this.primengTableHelper.getMaxResultCount(this.paginator, event)
+        if (!this.paginator || !this.dataTable) {
+            return;
+        }
+
+        //show loading trong gridview
+        this.primengTableHelper.showLoadingIndicator();
+
+        /**
+         * mặc định ban đầu lấy hết dữ liệu nên dữ liệu filter = null
+         */
+
+        this.reloadList(null, event);
+    }
+
+    reloadList(lessonName,event?: LazyLoadEvent): void {
+        this._lessonService.getLessonsByFilter("read & write",lessonName, null, this.primengTableHelper.getMaxResultCount(this.paginator, event)
             , this.primengTableHelper.getSkipCount(this.paginator, event)).subscribe(result => {
                 this.primengTableHelper.totalRecordsCount = result.totalCount;
                 this.primengTableHelper.records = result.items;
@@ -62,5 +77,14 @@ export class ReadWriteComponent extends AppComponentBase implements OnInit {
     }
     reloadPage(): void {
         this.paginator.changePage(this.paginator.getPage());
+    }
+    applyFilters(): void {
+        //truyền params lên url thông qua router
+        this.reloadList(this.lessonName, null);
+
+        if (this.paginator.getPage() !== 0) {
+            this.paginator.changePage(0);
+            return;
+        }
     }
 }

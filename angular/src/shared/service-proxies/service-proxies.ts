@@ -4921,15 +4921,18 @@ export class LessonServiceProxy {
 
     /**
      * @catName (optional) 
+     * @lessonContent (optional) 
      * @sorting (optional) 
      * @maxResultCount (optional) 
      * @skipCount (optional) 
      * @return Success
      */
-    getLessonsByFilter(catName: string | null | undefined, sorting: string | null | undefined, maxResultCount: number | null | undefined, skipCount: number | null | undefined): Observable<PagedResultDtoOfLessonDto> {
+    getLessonsByFilter(catName: string | null | undefined, lessonContent: string | null | undefined, sorting: string | null | undefined, maxResultCount: number | null | undefined, skipCount: number | null | undefined): Observable<PagedResultDtoOfLessonDto> {
         let url_ = this.baseUrl + "/api/Lesson/GetLessonsByFilter?";
         if (catName !== undefined)
             url_ += "CatName=" + encodeURIComponent("" + catName) + "&"; 
+        if (lessonContent !== undefined)
+            url_ += "lessonContent=" + encodeURIComponent("" + lessonContent) + "&"; 
         if (sorting !== undefined)
             url_ += "Sorting=" + encodeURIComponent("" + sorting) + "&"; 
         if (maxResultCount !== undefined)
@@ -9785,13 +9788,13 @@ export class ApiServiceProxy {
     }
 
     /**
-     * @destinationPath (optional) 
+     * @desPath (optional) 
      * @return Success
      */
-    upload(destinationPath: string | null | undefined): Observable<void> {
+    upload(desPath: string | null | undefined): Observable<void> {
         let url_ = this.baseUrl + "/api/Upload?";
-        if (destinationPath !== undefined)
-            url_ += "destinationPath=" + encodeURIComponent("" + destinationPath) + "&"; 
+        if (desPath !== undefined)
+            url_ += "desPath=" + encodeURIComponent("" + desPath) + "&"; 
         url_ = url_.replace(/[?&]$/, "");
 
         let options_ : any = {
