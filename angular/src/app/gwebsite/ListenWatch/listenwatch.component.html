@@ -31,15 +31,15 @@
                         MORE -->
                     </h3>
                 </button>
-                <tr>
+                <tr *ngIf="isGranted('Pages.Administration.Lesson.Edit')">
                     <td>
                         <button class="btn m-btn m-btn--hover-accent m-btn--icon m-btn--icon-only m-btn--pill"
-                                (click)="createOrEditModal.show(item.id)" title="{{l('Edit')}}">
+                              *ngIf="isGranted('Pages.Administration.Lesson.Edit')"  (click)="createOrEditModal.show(item.id)" title="{{l('Edit')}}">
                             <i class="fa fa-edit" [attr.aria-label]="l('Edit')"></i>
                         </button>
 
                         <button class="btn m-btn m-btn--hover-accent m-btn--icon m-btn--icon-only m-btn--pill"
-                                (click)="deleteLesson(item.id)" title="{{l('Delete')}}">
+                             *ngIf="isGranted('Pages.Administration.Lesson.Delete')"   (click)="deleteLesson(item.id)" title="{{l('Delete')}}">
                             <i class="fa fa-times" [attr.aria-label]="l('Delete')"></i>
                         </button>
                     </td>
